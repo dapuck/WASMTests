@@ -1,0 +1,25 @@
+{
+  "name": "wasmtests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "wasdk": "^1.0.54"
+  },
+  "devDependencies": {
+    "wasdk": "^1.0.54"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dapuck/WASMTests.git"
+  },
+  "author": "Ian McCall <ian@ianmccall.codes>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dapuck/WASMTests/issues"
+  },
+  "homepage": "https://github.com/dapuck/WASMTests#readme"
+}

@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Fibonacci Perf Test</title>
+
+        <script src="./fibonacci.min.js"></script>
+        <!--<script src="./fibonacci_wasm.min.js"></script>-->
+        <script src="./wasm_browser.js"></script>
+        <script>
+            Module['onRuntimeInitialized'] = function() {
+                startTests();
+            }
+
+            function startTests() {
+                //Test JS
+                (function(){
+                    var t0 = performance.now();
+                    var x = window.fib(40);
+                    var t1 = performance.now();
+                    console.log(x);
+                    var dt = t1 - t0;
+                    document.getElementById("twohundreth_fib_js").innerHTML = dt + "ms";
+                })();
+                //Test WASM
+                (function(){
+                    var t0 = performance.now();
+                    var x = Module.fib(40);
+                    var t1 = performance.now();
+                    console.log(x);
+                    var dt = t1 - t0;
+                    document.getElementById("twohundreth_fib_wasm").innerHTML = dt + "ms";
+                })();
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Fibonacci Performance Tests: JS vs. WASM</h1>
+        <div>
+            <h2>40th Fibonacci Number</h2>
+            <table>
+                <tr>
+                    <td>
+                        <span>JS</span>
+                    </td>
+                    <td>
+                        <span id="twohundreth_fib_js"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>WASM</span>
+                    </td>
+                    <td>
+                        <span id="twohundreth_fib_wasm"></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <script>
+            
+        </script>
+    </body>
+</html>
