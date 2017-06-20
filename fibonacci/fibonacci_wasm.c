@@ -1,4 +1,4 @@
-int fib(int x) {
+unsigned long fib(unsigned long x) {
     if (x == 0) {
         return 0;
     }
