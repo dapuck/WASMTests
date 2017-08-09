@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Prime Checker Test</title>
+
+        <script src="../lib/wasm_loader.js" data-wasm="./primechecker.wasm" data-callback="moduleLoaded();"></script>
+        <script>
+            function moduleLoaded() {
+                console.log("Wasm module loaded.");
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Testing prime check module</h1>
+    </body>
+</html>
